@@ -151,14 +151,12 @@
 
         /* ── TIMETABLE ── */
         .timetable-section { background:#fff8f9; }
-        .timetable-section .section {max-width:1200px;margin: 0 auto;padding:64px 24px;}
-        .timetable-wrapper {display: grid;grid-template-columns: 1fr 1fr;gap: 20px;/* 24 → 20 */}
+        .timetable-section .section {max-width:1200px;margin: 0 auto;padding:64px 0px;}
+        .timetable-wrapper {display: grid;grid-template-columns: 1fr 1fr;gap: 28px;/* 24 → 20 */}
 
-.tt-table-wrap {
-    width: 100%;            /* 추가 */
-}
+.tt-table-wrap {width: 100%;}
         .tt-table-wrap { background:var(--lg-white); border:1px solid var(--lg-border); border-radius:16px; overflow:hidden; box-shadow:var(--card-shadow); }
-        .tt-table-header { padding:18px 24px; display:flex; align-items:center; justify-content:space-between; }
+        .tt-table-header { padding:22px 28px; display:flex; align-items:center; justify-content:space-between; }
         .tt-table-header.day1 { background:linear-gradient(135deg,var(--lg-red),#d42050); }
         .tt-table-header.day2 { background:linear-gradient(135deg,#1a1a2e,#2d1a2e); }
         .tt-table-header h3 { font-size:1.05rem; font-weight:800; color:#fff; }
