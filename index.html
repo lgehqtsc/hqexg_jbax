@@ -157,6 +157,19 @@
 .tt-table-wrap {width: 100%;}
         .tt-table-wrap { background:var(--lg-white); border:1px solid var(--lg-border); border-radius:16px; overflow:hidden; box-shadow:var(--card-shadow); }
         .tt-table-header { padding:22px 28px; display:flex; align-items:center; justify-content:space-between; }
+     .tt-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* 오른쪽 정렬 */
+    gap: 4px;
+}
+
+/* ✅ 안내 문구 */
+.schedule-note {
+    font-size: 0.78rem;  /* ※ 15시 30분 종료 예상과 동일 */
+    font-weight: 500;
+    color: rgba(255,255,255,0.85); /* day2 헤더가 어두운 경우 */
+}
         .tt-table-header.day1 { background:linear-gradient(135deg,var(--lg-red),#d42050); }
         .tt-table-header.day2 { background:linear-gradient(135deg,#1a1a2e,#2d1a2e); }
         .tt-table-header h3 { font-size:1.05rem; font-weight:800; color:#fff; }
@@ -551,6 +564,17 @@
                 <div class="tt-table-header day2">
                     <h3>2일차 일정 <span style="font-size:0.76rem;font-weight:400;opacity:0.7;">(6시간)</span></h3>
                     <span class="day-label">DAY 2</span>
+                    <div class="tt-table-header day2">
+    <h3>2일차 교육 일정</h3>
+
+    <div class="tt-header-right">
+        <span class="schedule-note">
+            *시간표는 수정될 수 있습니다.
+        </span>
+        <span class="day-label">DAY 2</span>
+    </div>
+</div>
+</div>
                 </div>
                 <table class="tt-table">
                     <thead><tr><th>시간</th><th>내용</th><th>상세</th></tr></thead>
