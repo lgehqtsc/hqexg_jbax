@@ -161,16 +161,41 @@
         .tt-table-header.day2 { background:linear-gradient(135deg,#1a1a2e,#2d1a2e); }
         .tt-table-header h3 { font-size:1.05rem; font-weight:800; color:#fff; }
         .tt-table-header .day-label { font-size:0.78rem; font-weight:700; background:rgba(255,255,255,0.2); padding:4px 14px; border-radius:20px; color:#fff; font-family:'DM Sans',sans-serif; }
-        .tt-table { width:100%; border-collapse:collapse; font-size:0.88rem; table-layout:auto; }
+        .tt-table { 
+    width:100%; 
+    border-collapse:collapse; 
+    font-size:0.88rem; 
+    table-layout:fixed;   /* ✅ auto → fixed 로 변경 */
+}
         .tt-table thead th { padding:10px 12px; font-size:0.8rem; font-weight:700; color:var(--lg-red); text-transform:uppercase; letter-spacing:0.5px; text-align:left; border-bottom:2px solid #f0e0e3; background:#fef8f9; font-family:'DM Sans',sans-serif; }
         .tt-table tbody td { padding:10px 12px; border-bottom:1px solid #f5eced; color:#444; vertical-align:top; font-size:0.9rem; line-height:1.5; }
         .tt-table tbody tr:hover td { background:#fef8f9; }
-.tt-table tbody td:nth-child(1) {font-weight:700;color:var(--lg-red);font-size:0.86rem;font-family:'DM Sans',sans-serif;white-space:nowrap;width: 1%;}
+.tt-table tbody td:nth-child(1) {
+    font-weight:700;
+    color:var(--lg-red);
+    font-size:0.86rem;
+    font-family:'DM Sans',sans-serif;
+    white-space:nowrap;
+}
         .tt-table-wrap:last-child .tt-table tbody td:nth-child(1) { color:#6a4c93; }
         .tt-table tbody td:nth-child(2) { color:var(--lg-dark); font-weight:600; }
         .tt-table tbody td:nth-child(3) { color:var(--lg-gray); font-size:0.86rem; }
+        .tt-table th:nth-child(1),
+.tt-table td:nth-child(1) {
+    width:16%;
+}
+
+.tt-table th:nth-child(2),
+.tt-table td:nth-child(2) {
+    width:54%;
+}
+
+.tt-table th:nth-child(3),
+.tt-table td:nth-child(3) {
+    width:30%;
+}
         .tt-table thead th:nth-child(1),
-.tt-table tbody td:nth-child(1) {padding-left: 6px !important;padding-right: 6px !important;}
+.tt-table tbody td:nth-child(1) {padding-left: 14px !important;padding-right: 6px !important;}
         .tt-table tbody tr.is-break td { color:#b8860b; }
         .tt-table tbody tr.is-break td:nth-child(2) { font-weight:500; color:#999; }
         .tt-tag { display:inline-block; padding:2px 8px; border-radius:5px; font-size:0.66rem; font-weight:700; margin-left:6px; vertical-align:middle; font-family:'DM Sans',sans-serif; }
@@ -563,15 +588,6 @@
                     </tbody>
                 </table>
             </div>
-<div style="
-    text-align:right;
-    padding:12px 20px 16px 20px;
-    color:var(--lg-red);
-    font-weight:600;
-    font-size:0.82rem;
-">
-    ※ 시간표는 변경될 수 있습니다.
-</div>
         </div>
     </div>
 </section>
