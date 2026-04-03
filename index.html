@@ -78,7 +78,7 @@
 
         /* ── TAB BAR ── */
         .tab-bar { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--lg-border); }
-        .tab-bar-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; padding:0 24px; overflow-x:auto; scrollbar-width:none; }
+      .tab-bar-inner {width:100%;display:flex;justify-content:center;align-items:center;padding:0 24px;overflow-x:auto;}
         .tab-bar-inner::-webkit-scrollbar { display:none; }
         .tab-item { flex-shrink:0; padding:14px 20px; font-size:0.88rem; font-weight:600; color:var(--lg-gray); text-decoration:none; border-bottom:2px solid transparent; transition:all 0.2s; white-space:nowrap; }
         .tab-item:hover { color:var(--lg-red); }
@@ -149,6 +149,12 @@
         .activity-content p { font-size:0.83rem; color:var(--lg-gray); }
 
         /* ── TIMETABLE ── */
+.timetable-note {
+    text-align: right;
+    font-size: 0.82rem;
+    color: #999;
+    margin-bottom: -12px;   /* ✅ 카드쪽으로 당김 */
+}
         .timetable-section { background:#fff8f9; }
         .timetable-section .section { padding:64px 24px; }
         .timetable-wrapper { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
@@ -456,6 +462,7 @@
             <p></p>
         </div>
         <div class="timetable-wrapper">
+    <div class="timetable-note">*시간표는 변경될 수 있습니다.</div>
             <!-- Day 1 -->
             <div class="tt-table-wrap">
                 <div class="tt-table-header day1">
