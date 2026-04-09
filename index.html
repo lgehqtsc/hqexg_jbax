@@ -153,7 +153,7 @@
     text-align: right;
     font-size: 0.82rem;
     color: #999;
-    margin-bottom: -12px;   /* ✅ 카드쪽으로 당김 */
+    margin-bottom: -12px;
 }
         .timetable-section { background:#fff8f9; }
         .timetable-section .section { padding:64px 24px; }
@@ -252,17 +252,19 @@
             .venue-grid{grid-template-columns:1fr}
         }
         @media print {
-            body > *:not(#printArea) { display: none !important; }
-            header, .tab-bar, section, footer, .hero-section, .notice-banner, button { display: none !important; }
-            #printArea {
+            body > * { display: none !important; }
+            body.printing #printArea {
                 display: block !important;
                 visibility: visible !important;
-                position: absolute; left: 0; top: 0;
-                width: 100%; padding: 40px !important;
-                background: #fff !important; border-radius: 0 !important;
-                box-shadow: none !important; border: none !important;
+                position: fixed;
+                left: 0; top: 0;
+                width: 100%;
+                padding: 40px !important;
+                background: #fff !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
                 margin: 0 !important;
-                page-break-after: avoid;
             }
             #printArea * { visibility: visible !important; }
             html, body {
@@ -629,55 +631,27 @@
             <div style="width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--lg-border);box-shadow:var(--card-shadow);">
                 <img src="IMG_5537.jpeg" alt="건물배치도" style="display:block;width:100%;height:auto;">
             </div>
-   
         </div>
         </div>
-     <div class="directions-grid">
-
-    <div class="direction-card">
-        <h4><span class="d-icon">🚗</span>자가용 이용 시</h4>
-        <p>
-            <strong>네비게이션:</strong> "LG디지털파크 서문" 검색<br>
-            LG디지털파크 내부 주차 불가, <strong>외부 서문 주차장</strong> 이용<br>
-            <span class="notice-text">※ 주차공간 부족으로 가급적 대중교통 또는 통근 버스 이용</span>
-        </p>
+        <div class="directions-grid">
+            <div class="direction-card">
+                <h4><span class="d-icon">🚗</span>자가용 이용 시</h4>
+                <p><strong>네비게이션:</strong> "LG디지털파크 서문" 검색<br>LG디지털파크 내부 주차 불가, <strong>외부 서문 주차장</strong> 이용<br><span class="notice-text">※ 주차공간 부족으로 가급적 대중교통 또는 통근 버스 이용</span></p>
+            </div>
+            <div class="direction-card">
+                <h4><span class="d-icon">🚌</span>대중교통 이용 시</h4>
+                <p><strong>1) 통근버스:</strong> 오산역 1번 출구 홍약국 앞 탑승<br><span class="notice-text">※ 06:40~07:35까지 10분 간격 배차</span><br><strong>2) 시내버스:</strong> 오산역 or 오산 시외버스터미널 앞 탑승 → LG디지털파크 행<br><strong>3) 택시:</strong> 오산역 or 시외버스터미널에서 약 15분 이내</p>
+            </div>
+            <div class="direction-card">
+                <h4><span class="d-icon">🚌</span>통근버스 이용 시</h4>
+                <p><strong>통근버스 노선 및 시간표 안내:</strong> <a href="https://blog.naver.com/lgdpbus3012" target="_blank" style="color:var(--lg-red);">blog.naver.com/lgdpbus3012</a><br>자세한 탑승 위치는 '같이가' 어플을 통해 확인 가능<br><span class="notice-text">* 별도 사전 신청 없이 ID카드 태깅하여 탑승 가능</span></p>
+            </div>
+            <div class="direction-card">
+                <h4><span class="d-icon">🚘</span>차량 5부제 안내</h4>
+                <p>현재 기준으로 평택 사업장은 차량 5부제 <strong>자율 동참 지역</strong>으로 운영되고 있습니다.<br><span class="notice-text">※ 상황 변동이 잦은 만큼 변경 사항이 발생할 경우 별도로 재공지 드리겠습니다.</span></p>
+            </div>
+        </div>
     </div>
-
-    <!-- ✅ margin-top 제거 -->
-    <div class="notice-banner">
-        <span class="notice-icon">🚘</span>
-        <p>
-            <strong>[차량 5부제 안내]</strong><br>
-            현재 기준으로 평택 사업장은 차량 5부제 
-            <strong>자율 동참 지역</strong>으로 운영되고 있습니다. 
-            다만, 상황 변동이 잦은 만큼 변경 사항이 발생할 경우 
-            <strong>별도로 재공지</strong> 드리겠습니다.
-        </p>
-    </div>
-
-    <div class="direction-card">
-        <h4><span class="d-icon">🚌</span>대중교통 이용 시</h4>
-        <p>
-            <strong>1) 통근버스:</strong> 오산역 1번 출구 홍약국 앞 탑승<br>
-            <span class="notice-text">※ 06:40\~07:35까지 10분 간격 배차</span><br>
-            <strong>2) 시내버스:</strong> 오산역 or 오산 시외버스터미널 앞 탑승 → LG디지털파크 행<br>
-            <strong>3) 택시:</strong> 오산역 or 시외버스터미널에서 약 15분 이내
-        </p>
-    </div>
-
-    <div class="direction-card">
-        <h4><span class="d-icon">🚌</span>통근버스 이용 시</h4>
-        <p>
-            <strong>통근버스 노선 및 시간표 안내:</strong> 
-            <a href="https://blog.naver.com/lgdpbus3012" target="_blank" style="color:var(--lg-red);">
-                blog.naver.com/lgdpbus3012
-            </a><br>
-            자세한 탑승 위치는 '같이가' 어플을 통해 확인 가능<br>
-            <span class="notice-text">* 별도 사전 신청 없이 ID카드 태깅하여 탑승 가능</span>
-        </p>
-    </div>
-
-</div>
 </section>
 
 <!-- ===== 러닝센터 생활안내 ===== -->
@@ -948,15 +922,9 @@ function toggleFaq(el) {
     if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
 }
 function printConfirmation() {
-    var original = document.getElementById('printArea');
-    var clone = original.cloneNode(true);
-    clone.id = 'printArea';
-    var bodyChildren = Array.from(document.body.children);
-    bodyChildren.forEach(function(el) { el.style.display = 'none'; });
-    document.body.appendChild(clone);
+    document.body.classList.add('printing');
     window.print();
-    document.body.removeChild(clone);
-    bodyChildren.forEach(function(el) { el.style.display = ''; });
+    document.body.classList.remove('printing');
 }
 const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
